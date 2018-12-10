@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            body {
+                margin: 0;
+                padding: 0;
+                /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+                background: #333;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            /* The only rule that matters */
+            #video-background {
+                /*  making the video fullscreen  */
+                position: fixed;
+                right: 0; 
+                bottom: 0;
+                min-width: 100%; 
+                min-height: 100%;
+                width: auto; 
+                height: auto;
+                z-index: -100;
+            }
+
+            /* These just style the content */
+            article {
+                /*  just a fancy border  */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 10px solid rgba(255, 255, 255, 0.5);
+                margin: 10px;
+            }
+
+            h1 {
+                position: absolute;
+                top: 60%;
+                width: 100%;
+                font-size: 36px;
+                letter-spacing: 3px;
+                color: #fff;
+                font-family: Oswald, sans-serif;
+                text-align: center;
+            }
+
+            h1 span {
+                font-family: sans-serif;
+                letter-spacing: 0;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            h1 span a {
+                color: #fff;
+            }
+            * {box-sizing: border-box}
+
+            /* Set height of body and the document to 100% */
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial;
+            }
+
+            /* Style tab links */
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 19px;
+                width: 25%;
+            }
+
+            .tablink:hover {
+                background-color: #777;
+            }
+
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+            }
+
+
+            p{
+                font-family: sans-serif;
+                color:#555;
+                font-size: 18px;
+                text-align: center;
+
+            }
+
+            h{
+                position: absolute;
+                top: calc(100% - 480px);
+                left: calc(50% - 460px);
+                z-index: 2;
+                float: left;
+                color: #d1e0e0;
+                font-family: 'Exo', italic;
+                font-size: 250px;
+                font-weight: 400px;
+                opacity:0.6;
+
+
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .row {
+                display: flex;
+            }
+
+            /* Create three equal columns that sits next to each other */
+            .column {
+                flex: 33.33%;
+                padding: 5px;
+            }
+            #Greece {background: url(_sea.gif);  background-size:100%;}
+            #Related_Sites {background: url(_sea.gif); background-size:100%; }
+            #Log Out {background-color:#ebccff;}
+
+        </style>
+    </head>
+
+    <body>
+
+        <button class="tablink" onclick="openPage('Home', this, '#4dc3ff')" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('Greece', this, '#4dc3ff')">Greece</button>
+        <button class="tablink" onclick="openPage('Related_Sites', this, '#4dc3ff')">Related_Sites</button>
+        <button class="tablink" onclick="log_out_func()">Log Out</button>
+
+        <div id="Home" class="tabcontent">
+
+            <h> Welcome </h>
+            <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+            <video autoplay loop id="video-background" muted plays-inline>
+                <source src="pl.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <div id="Greece" class="tabcontent">
+
+            <div class="row">
+                <div class="column">
+                    <img src="crete.jpg" style ="width:100%">
+                    <p> ~Crete~ </p>
+                </div>
+                <div class="column">
+                    <img src="santorini.jpg" style="width:100%">
+                    <p> ~Santorini~ </p>
+                </div>
+                <div class="column">
+                    <img src="corfu.jpeg" style="width:100%">
+                    <p> ~Corfu~ </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="Related_Sites" class="tabcontent">
+
+            <div class="row">
+                <div class="column">
+                    <a href="https://www.roughguides.com/destinations/europe/greece/"><img src="rough.png" style ="width:100%">
+                        <p> https://www.roughguides.com/destinations/europe/greece/ </p>
+                </div>
+                <div class="column">
+                    <a href="https://www.discovergreece.com/en"> <img src="dis.png" style="width:100%">
+                        <p> https://www.discovergreece.com/en </p>
+                </div>
+                <div class="column">
+                    <a href="http://www.visitgreece.gr/el#&slider1=2"><img src="eot.jpg" style="width:100%">
+                        <p> http://www.visitgreece.gr/el#&slider1=2 </p>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            function openPage(pageName, elmnt, color) {
+
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = color;
+
+            }
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
+            function log_out_func() {
+
+                window.location = "http://localhost:8080/Final_Project/main.html";
+            }
+
+        </script>
+
+    </body>
+</html> 
