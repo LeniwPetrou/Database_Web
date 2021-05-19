@@ -12,9 +12,9 @@ More specifically, some basic steps in order to create the project are the follo
       * **Redirection to the welcome page** of the app
       * **Logout** feature and **redirection to the login page** of the app 
       
-      *Note:* The welcome page, the menu and generally the content of the app is modified, related to the category in which user belongs to.
-      In detail, some features are for example: redirection to youtube songs or music sites if user belogs to music category, audio player on 
-      welcome page if user belogs to photography category, tourism sites if user belogs to tourism category...
+      *Note:* **The welcome page, the menu and generally the content of the app is modified**, related to the **category** in which **user belongs to**.
+      In detail, some features are for example: *redirection to youtube songs or music sites if user belogs to music category, audio player on 
+      welcome page if user belogs to photography category, tourism sites if user belogs to tourism category...*
 
    * If user's authentication is **invalid**: 
       * A **popup failure message** is displaying on the screen 
@@ -31,13 +31,13 @@ More specifically, some basic steps in order to create the project are the follo
 
 ## Sneak preview
 
-Here is a sneak preview and some highlights of the app:
+Here is a sneak preview and some **highlights** of the app:
 
 * Invalid Authentication
 
-![](invalidAuthentication.gif)
+![](invalidAuthenticantion.gif)
 
 
 * Valid Authentication
 
-![](validAuthentication.gif)  
+![](validAuthenticantion.gif)  
