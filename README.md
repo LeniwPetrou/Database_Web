@@ -33,11 +33,21 @@ The main idea of the project is that when **the user is successfully logged in, 
 
 Here is a sneak preview and some **highlights** of the app:
 
-* Invalid Authentication
+* **Invalid Authentication**
 
 ![](invalidAuthenticantion.gif)
 
 
-* Valid Authentication
+* **Valid Authentication**
 
 ![](validAuthenticantion.gif)  
+
+
+* **Logout**
+
+![](logOut.gif)  
+
+
+* **Audio Player**
+
+![](audioPlayer.gif)
